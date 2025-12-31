@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy New Year 💙</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&f[]=playfair-display@700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:#0c0a09;
+  --pink:#ec4899;
+  --rose:#f43f5e;
+}
+
+body {
+  margin:0;
+  font-family:'Satoshi',sans-serif;
+  background:var(--bg);
+  color:#fff;
+  overflow:hidden;
+}
+
+/* Aurora */
+#aurora {
+  position:fixed;
+  inset:0;
+  z-index:0;
+  background:
+    radial-gradient(at 20% 20%, hsla(333,70%,55%,.4), transparent 50%),
+    radial-gradient(at 80% 80%, hsla(210,89%,60%,.3), transparent 50%);
+  animation: aurora 20s linear infinite;
+}
+@keyframes aurora {
+  0% { transform:rotate(0deg) scale(1.2); }
+  50% { transform:rotate(180deg) scale(1.3); }
+  100% { transform:rotate(360deg) scale(1.2); }
+}
+
+/* Heart canvas */
+#heart-canvas {
+  position:fixed;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+}
+
+/* App */
+#app {
+  position:relative;
+  z-index:2;
+  display:grid;
+  place-items:center;
+  height:100vh;
+}
+
+.step {
+  position:absolute;
+  background:rgba(25,25,25,.55);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:1rem;
+  padding:2rem;
+  max-width:900px;
+  width:90%;
+  text-align:center;
+  opacity:0;
+  transform:scale(.95);
+  pointer-events:none;
+}
+
+.step.active {
+  opacity:1;
+  transform:scale(1);
+  pointer-events:auto;
+}
+
+.anim {
+  opacity:0;
+  transform:translateY(25px);
+}
+
+.btn {
+  background:linear-gradient(90deg,var(--pink),var(--rose));
+  padding:.75rem 2rem;
+  border-radius:999px;
+  font-weight:700;
+}
+
+.text-grad {
+  font-family:'Playfair Display',serif;
+  background:linear-gradient(90deg,#f9a8d4,#fff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* Progress bar */
+#progress-wrap {
+  position:fixed;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+  width:80%;
+  max-width:320px;
+  height:6px;
+  background:rgba(255,255,255,.1);
+  border-radius:999px;
+  z-index:3;
+}
+#progress {
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,var(--pink),var(--rose));
+  border-radius:999px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="aurora"></div>
+<div id="heart-canvas"></div>
+
+<div id="progress-wrap"><div id="progress"></div></div>
+
+<div id="app">
+
+<!-- STEP 1 -->
+<div id="step1" class="step active">
+  <div class="anim text-7xl mb-4">❤️</div>
+  <h1 class="anim text-4xl md:text-5xl font-bold text-grad mb-4">
+    Hey My Best Friend,
+  </h1>
+  <p class="anim text-gray-300 mb-6">
+    I made something special for you… just to start this New Year with a smile.
+  </p>
+  <button id="btn1" class="anim btn">Let’s Begin</button>
+</div>
+
+<!-- STEP 2 -->
+<div id="step2" class="step">
+  <h2 class="anim text-4xl md:text-5xl font-bold text-grad mb-4">
+    Let’s look into the previous year
+  </h2>
+  <p class="anim text-gray-300 mb-6">
+    Some moments deserve to be remembered forever.
+  </p>
+
+  <div class="anim rounded-xl overflow-hidden mb-6">
+    <video controls preload="none" class="w-full h-[320px] bg-black">
+      <source src="VID_20251231_160101.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <button id="btn2" class="anim btn">Continue</button>
+</div>
+
+<!-- STEP 3 -->
+<div id="step3" class="step">
+  <div class="anim text-7xl mb-4">🎆</div>
+  <h2 class="anim text-4xl md:text-5xl font-bold text-grad mb-4">
+    HAPPY NEW YEAR PAITHIYAKARIII , Lets start this 2026 with more LOVE 💗
+  </h2>
+  <p class="anim text-gray-300 mb-6">
+    Happiest new year my girl 💗... Im very excited to see how we gonnaaaa live this year , last year was unforgettable each and every day with you was so peaceful that I can't express in words, we survived stroms and fights but guess what we still chose each other every fkn time... 2025 owns the best days of my life , from riding bikes to sharing memories to hours and hours of calls , hours and hours of rants , fights .. the care you showed me was something no one can replace, again my baby girl take care , I'm not gonna leave you anywhere in the middle ...enna aanalum seri I'll still choose my ofcourse MY CURLY HAIR 🥹💗... And this 2026 is gonna be perfect year for you , this year welcomes you with the US internship olunga panu... US poitu call panu , videos mail panu aprm Anga poi edhavudhu vellakaran ah frnd uh pudchaaa nu vaiiii avlooo dhnn onakuuu... Aprm ennaku edhavudhuuu shoes mudinja cheap ah irundha vaangitu va 😁... I'm always your mirror soul and you are my only safe chaos 🥺💗... You are my everything and remember "Tere Bin Khali Aja Khalipan Mein... " Yeah without you I'm empty I'm just a body without soul , I'm never gonna lose my girl 🥺💗... Aprm 2026 onaku enna order na olunga mudi ah paathuko , those defined curls and keep on sending photos videos every random stuff coz we both living the same life , aprm US poitu olunga saapduu busu busu mukiyam bigil eh... Once again let's start this year with more love "HAPPY NEW YEAR MY DEAREST 💗✨"
+  </p>
+
+  <p id="final-text" class="text-pink-300 text-xl font-bold opacity-0">
+    Happy New Year, my soul, my everything , my safe choas , my anthaathi , my chanddd, my dearesst bestesttttt friend 💙🎉
+  </p>
+
+  <button id="celebrate" class="anim btn mt-6">Celebrate!</button>
+</div>
+
+</div>
+
+<script>
+/* ---------------- FLOATING HEARTS ---------------- */
+let scene, camera, renderer, hearts=[];
+const heartContainer = document.getElementById('heart-canvas');
+
+function initHearts(){
+  scene = new THREE.Scene();
+  camera = new THREE.PerspectiveCamera(
+    75, window.innerWidth/window.innerHeight, 0.1, 1000
+  );
+  camera.position.z = 30;
+
+  renderer = new THREE.WebGLRenderer({alpha:true, antialias:true});
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+  heartContainer.appendChild(renderer.domElement);
+
+  scene.add(new THREE.AmbientLight(0xffffff,0.8));
+  const light = new THREE.DirectionalLight(0xffffff,1.2);
+  light.position.set(5,10,7);
+  scene.add(light);
+
+  const shape = new THREE.Shape();
+  shape.moveTo(25,25);
+  shape.bezierCurveTo(25,25,20,0,0,0);
+  shape.bezierCurveTo(-30,0,-30,35,-30,35);
+  shape.bezierCurveTo(-30,55,-10,77,25,95);
+  shape.bezierCurveTo(60,77,80,55,80,35);
+  shape.bezierCurveTo(80,35,80,0,50,0);
+  shape.bezierCurveTo(35,0,25,25,25,25);
+
+  const geo = new THREE.ExtrudeGeometry(shape,{
+    depth:6, bevelEnabled:true, bevelSize:1, bevelThickness:1
+  });
+
+  const colors=[0xec4899,0xf472b6,0xf43f5e];
+
+  for(let i=0;i<20;i++){
+    const mat = new THREE.MeshPhongMaterial({
+      color:colors[Math.floor(Math.random()*colors.length)],
+      transparent:true,
+      opacity:.7,
+      shininess:120
+    });
+    const h = new THREE.Mesh(geo,mat);
+    const s=Math.random()*.04+.02;
+    h.scale.set(s,s,s);
+    h.position.set(
+      (Math.random()-.5)*60,
+      (Math.random()-.5)*40,
+      (Math.random()-.5)*20
+    );
+    h.userData={baseY:h.position.y, speed:Math.random()*1.5+.5};
+    hearts.push(h);
+    scene.add(h);
+  }
+
+  animateHearts();
+}
+
+function animateHearts(){
+  requestAnimationFrame(animateHearts);
+  const t=Date.now()*.001;
+  hearts.forEach(h=>{
+    h.rotation.x+=.002;
+    h.rotation.y+=.003;
+    h.position.y=h.userData.baseY+Math.sin(t*h.userData.speed)*2;
+  });
+  renderer.render(scene,camera);
+}
+
+window.addEventListener('resize',()=>{
+  camera.aspect=window.innerWidth/window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth,window.innerHeight);
+});
+
+initHearts();
+
+/* ---------------- STORY LOGIC ---------------- */
+const steps=[step1,step2,step3];
+let cur=0;
+const progress=document.getElementById('progress');
+
+function showStep(n){
+  steps.forEach(s=>s.classList.remove('active'));
+  steps[n].classList.add('active');
+  gsap.fromTo(
+    steps[n].querySelectorAll('.anim'),
+    {opacity:0,y:25},
+    {opacity:1,y:0,stagger:.15,duration:.6}
+  );
+  progress.style.width=`${(n/(steps.length-1))*100}%`;
+}
+
+btn1.onclick=()=>{cur=1;showStep(cur);}
+btn2.onclick=()=>{cur=2;showStep(cur);}
+
+celebrate.onclick=()=>{
+  gsap.to('#final-text',{opacity:1,y:0,duration:.6});
+
+  confetti({particleCount:200,spread:360,origin:{y:.6}});
+
+  /* HEARTS FLY AWAY */
+  hearts.forEach(h=>{
+    gsap.to(h.position,{
+      y:h.position.y+60,
+      x:(Math.random()-.5)*80,
+      z:(Math.random()-.5)*40,
+      duration:4,
+      ease:"power3.out"
+    });
+    gsap.to(h.material,{opacity:0,duration:3});
+  });
+};
+
+showStep(0);
+</script>
+
+</body>
+</html>
